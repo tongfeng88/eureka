@@ -36,7 +36,7 @@ pipeline {
             agent any
             steps {
                 unstash 'app'
-                sh "docker login -u ${REPOSITORY_CREDS_USR} -p ${REPOSITORY_CREDS_PSW} ${params.REPOSITORY_HOST}"
+                sh "docker login -u 100009328407 -p Qwe12345 ${params.REPOSITORY_HOST}"
                 sh "docker build --build-arg JAR_FILE=`ls target/*.jar |cut -d '/' -f2` -t ${params.REPOSITORY_HOST}/${params.DOCKER_IMAGE}:${GIT_TAG} ."
                 sh "docker push ${params.REPOSITORY_HOST}/${params.DOCKER_IMAGE}:${GIT_TAG}"
                 sh "docker rmi ${params.REPOSITORY_HOST}/${params.DOCKER_IMAGE}:${GIT_TAG}"
