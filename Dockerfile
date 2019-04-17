@@ -10,6 +10,6 @@ WORKDIR /pigx-eureka
 
 EXPOSE 8761
 
-ADD ./pigx-eureka/target/pigx-eureka.jar ./
+ADD ./pigx-eureka/target/pigx-eureka-2.7.0.jar ./
 
-CMD java -Djava.security.egd=file:/dev/./urandom -jar pigx-eureka.jar
+CMD java -Djava.security.egd=file:/dev/./urandom -jar pigx-eureka-2.7.0.jar
