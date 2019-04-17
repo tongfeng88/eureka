@@ -23,5 +23,6 @@ spec:
         env:
           - name: SPRING_PROFILES_ACTIVE
             value: {SPRING_PROFILE}
+      hostNetwork: true
       imagePullSecrets:
         - name: tencent
