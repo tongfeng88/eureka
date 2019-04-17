@@ -7,7 +7,7 @@ spring:
       name: pig
       password: pig
   application:
-    name: @artifactId@
+    name: eureka
   cloud:
     config:
       enabled: false
