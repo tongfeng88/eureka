@@ -21,13 +21,11 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
+	<groupId>com.pig4cloud</groupId>
+	<version>2.7.0</version>
 	<artifactId>pigx-eureka</artifactId>
 	<packaging>jar</packaging>
-
 	<description>pigx 服务中心，基于eureka</description>
-
-
 	<properties>
 		<spring-boot.version>2.1.3.RELEASE</spring-boot.version>
 		<spring-cloud.version>Greenwich.SR1</spring-cloud.version>
