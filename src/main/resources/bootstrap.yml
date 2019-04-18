@@ -1,6 +1,5 @@
 server:
   port: 32000
-
 spring:
   security:
     user:
@@ -26,7 +25,24 @@ eureka:
     eviction-interval-timer-in-ms: 4000
     enable-self-preservation: false
     renewal-percent-threshold: 0.9
+    management:
+      endpoints:
+        web:
+          exposure:
+            include: '*'
 ---
+server:
+  port: 32001
+spring:
+  security:
+    user:
+      name: pig
+      password: pig
+  application:
+    name: eureka
+  cloud:
+    config:
+      enabled: false
 eureka:
   instance:
     hostname: pigx-eureka2
