@@ -14,39 +14,8 @@ spring:
 # 类似的 redis 使用pigx-redis ,gateway 换成 pigx-gateway
 eureka:
   instance:
-    hostname: pigx-eureka1
+    hostname: pigx-eureka
     prefer-ip-address: true
-  client:
-    register-with-eureka: false
-    fetch-registry: false
-    service-url:
-      defaultZone: http://pig:pig@${eureka.instance.hostname}:${server.port}/eureka/
-  server:
-    eviction-interval-timer-in-ms: 4000
-    enable-self-preservation: false
-    renewal-percent-threshold: 0.9
-    management:
-      endpoints:
-        web:
-          exposure:
-            include: '*'
----
-server:
-  port: 32001
-spring:
-  security:
-    user:
-      name: pig
-      password: pig
-  application:
-    name: eureka
-  cloud:
-    config:
-      enabled: false
-eureka:
-  instance:
-    hostname: pigx-eureka2
-    prefer-ip-address: false
   client:
     register-with-eureka: false
     fetch-registry: false
