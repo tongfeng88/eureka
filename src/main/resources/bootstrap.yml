@@ -23,7 +23,7 @@ eureka-rs2:
 
 eureka:
   instance:
-    hostname: pigx-eureka
+    hostname: eureka
     prefer-ip-address: false
   client:
     register-with-eureka: false
