@@ -26,6 +26,14 @@ eureka:
     enable-self-preservation: true
     renewal-percent-threshold: 0.9
 
+eureka-rs1:
+  hostname: eureka0
+  port: 8000
+
+eureka-rs2:
+  hostname: eureka1
+  port: 8001
+
 management:
   endpoints:
     web:
