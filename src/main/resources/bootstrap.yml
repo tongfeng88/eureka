@@ -12,19 +12,6 @@ spring:
       enabled: false
 # docker-compose部署时候 hostname 换成pigx-eureka
 # 类似的 redis 使用pigx-redis ,gateway 换成 pigx-gateway
-eureka:
-  instance:
-    hostname: eureka
-    prefer-ip-address: false
-  client:
-    register-with-eureka: true
-    fetch-registry: false
-    service-url:
-      defaultZone: http://pig:pig@${eureka.instance.hostname}:${server.port}/eureka/,http://pig:pig@${eureka-rs1.hostname}:${eureka-rs1.port}/eureka/,http://pig:pig@${eureka-rs2.hostname}:${eureka-rs2.port}/eureka/
-  server:
-    eviction-interval-timer-in-ms: 4000
-    enable-self-preservation: true
-    renewal-percent-threshold: 0.9
 
 eureka-rs1:
   hostname: eureka0
@@ -33,6 +20,20 @@ eureka-rs1:
 eureka-rs2:
   hostname: eureka1
   port: 8001
+
+eureka:
+  instance:
+    hostname: pigx-eureka
+    prefer-ip-address: false
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://pig:pig@${eureka.instance.hostname}:${server.port}/eureka/,http://pig:pig@${eureka-rs1.hostname}:${eureka-rs1.port}/eureka/,http://pig:pig@${eureka-rs2.hostname}:${eureka-rs2.port}/eureka/
+  server:
+    eviction-interval-timer-in-ms: 4000
+    enable-self-preservation: true
+    renewal-percent-threshold: 0.9
 
 management:
   endpoints:
