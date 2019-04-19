@@ -14,11 +14,11 @@ spring:
 # 类似的 redis 使用pigx-redis ,gateway 换成 pigx-gateway
 
 eureka-rs1:
-  hostname: eureka0
+  hostname: k8s-node1
   port: 8000
 
 eureka-rs2:
-  hostname: eureka1
+  hostname: k8s-node2
   port: 8001
 
 eureka:
