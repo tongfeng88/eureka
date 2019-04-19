@@ -44,6 +44,19 @@ pipeline {
             
         }
         stage('Deploy') {
+                  when {
+                      allOf {
+                          expression { env.GIT_TAG != null }
+                      }
+                  }
+                  agent {
+                      docker {
+                          image 'lwolf/helm-kubectl-docker'
+                      }
+                  }
+                  steps {
+                      sh "mkdir -p ~/.kube"
+                  }
 
               }
         
