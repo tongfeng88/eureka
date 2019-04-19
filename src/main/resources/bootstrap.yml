@@ -1,3 +1,5 @@
+server:
+  port: 32000
 spring:
   security:
     user:
