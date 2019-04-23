@@ -23,10 +23,10 @@ eureka-rs2:
 
 eureka:
   instance:
-    hostname: eureka
+    hostname: nova-eureka
     prefer-ip-address: false
   client:
-    register-with-eureka: false
+    register-with-eureka: true
     fetch-registry: false
     service-url:
       defaultZone: http://pig:pig@${eureka.instance.hostname}:${server.port}/eureka/,http://pig:pig@${eureka-rs1.hostname}:${eureka-rs1.port}/eureka/,http://pig:pig@${eureka-rs2.hostname}:${eureka-rs2.port}/eureka/
